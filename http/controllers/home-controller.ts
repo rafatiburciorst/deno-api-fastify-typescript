@@ -4,9 +4,11 @@ class HomeController {
 
     index = async (request: FastifyRequest, reply: FastifyReply) => {
         reply.send({
-            message: 'hello'
+            message: 'hello world'
         })
     }
+
+
 }
 
 export default new HomeController()
