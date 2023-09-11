@@ -1,11 +1,14 @@
 import Fastify from 'npm:fastify@4'
-import { appRoutes } from './http/routes.ts';
 import { ZodError } from 'npm:zod';
+
+import { appRoutes } from './http/routes.ts';
+import { userRoute } from './http/routes/user-routes.ts';
 
 export const app = Fastify()
 
 
 await app.register(appRoutes)
+await app.register(userRoute)
 
 app.setErrorHandler((error, _, reply) => {
     if (error instanceof ZodError) {

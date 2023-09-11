@@ -1,16 +1,18 @@
-import { FastifyRequest, FastifyReply } from "npm:fastify@4"
-import { kv } from "../../db/kv-db.ts";
-import { Product } from "../../models/product.ts";
+import { FastifyReply, FastifyRequest } from "npm:fastify@4"
 import { z } from "npm:zod";
-import { prisma } from "../../db/prisma.service.ts";
 
+import { kv } from "../../db/kv-db.ts";
+import { prisma } from "../../db/prisma.service.ts";
+import { Product } from "../../models/product.ts";
 
 class HomeController {
 
     index = async (request: FastifyRequest, reply: FastifyReply) => {
 
         const users = prisma.user.findMany()
-
+        reply.send({
+            users
+        })
         
     }
 
