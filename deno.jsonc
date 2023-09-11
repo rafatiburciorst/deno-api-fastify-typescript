@@ -1,5 +1,5 @@
 {
   "tasks": {
-    "dev": "deno run --watch --allow-all --unstable server.ts"
+    "dev": "deno run --watch --allow-all --unstable src/server.ts"
   }
 }
