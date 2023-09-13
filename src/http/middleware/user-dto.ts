@@ -14,6 +14,6 @@ export async function createUserDto(request: FastifyRequest, _: FastifyReply, do
     if (user.password !== user.password_confirmation) {
         throw new Error('Password does not match')
     }
-    
+    console.log('validado')
     done()
 }
